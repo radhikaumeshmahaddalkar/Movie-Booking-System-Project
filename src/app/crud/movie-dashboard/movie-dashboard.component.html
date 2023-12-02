@@ -1,0 +1,42 @@
+<h2 style="text-align: center;"> <u> Movie Details </u> </h2>
+<br>
+<!--------------------------------------------------------------------------------------------------->
+<div class="col-sm-3">
+    <div class="input-group">
+        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+            aria-describedby="search-addon" name="search" [(ngModel)]="term" />
+
+    </div>
+</div>
+<br>
+
+<!------------------------------------------------------------------------------------------------------>
+
+<table class="table table-light">
+    <thead>
+        <tr>
+            <th (click)="changeOrder()">ID</th>
+            <th (click)="changeOrder()">Movie Name</th>
+            <th (click)="changeOrder()"> Description </th>
+            <th (click)="changeOrder()">Gold Ticket Price</th>
+            <th (click)="changeOrder()">Silver Ticket Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let m of userData | filter: term |orderBy: order: reverse">
+            <td> {{ m._id }} </td>
+            <td> {{ m.mName }} </td>
+            <td> {{ m.desc }} </td>
+            <td> {{ m.gPrice }} </td>
+            <td> {{ m.sPrice}}</td>
+            
+            <td>
+                <button class="btn btn-outline-success m-2" [routerLink]="['../movie-edit', m._id]"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+
+                <button class="btn btn-outline-danger" (click)="delete(m._id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

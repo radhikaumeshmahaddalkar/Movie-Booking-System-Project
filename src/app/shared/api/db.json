@@ -1,0 +1,125 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fname": "Ram",
+      "lname": "Kulkarni",
+      "email": "ram@gmail.com",
+      "mobNo": "1234567899",
+      "pass": "Ram@1234",
+      "addr": "Mumbai"
+    },
+    {
+      "id": 2,
+      "fname": "sita",
+      "lname": "Kelkar",
+      "email": "sita@gmail.com",
+      "mobNo": "1234567899",
+      "pass": "Sita@1234",
+      "addr": "pune"
+    },
+    {
+      "id": 3,
+      "fname": "Ganesh",
+      "lname": "Kamat",
+      "email": "ganesh@gmail.com",
+      "mobNo": "7785964852",
+      "pass": "G@nu2111",
+      "addr": "khed"
+    },
+    {
+      "id": 4,
+      "fname": "Sayali",
+      "lname": "Kelkar",
+      "email": "say@gmail.com",
+      "mobNo": "7785964852",
+      "pass": "Say@1234",
+      "addr": "mumbai"
+    }
+  ],
+  "movie": [
+    {
+      "id": 1,
+      "img": "/assets/Images/Pathan.jpg",
+      "mName": "Pathaan",
+      "desc": "An Indian spy battles against the leader of a gang of mercenaries who have a heinous plot",
+      "gPrice": 300,
+      "sPrice": 200
+    },
+    {
+      "id": 2,
+      "img": "/assets/Images/Shehzada.jpg",
+      "mName": "Shehzada",
+      "desc": "Bantu is hated by his father Valmiki since he was a toddler. Samara his boss show him affection and love until he discovers that the Jindals are his parents. Bantu decides to seek Jindals love and protect them from threats they facing.",
+      "gPrice": 250,
+      "sPrice": 180
+    },
+    {
+      "id": 3,
+      "mName": "Ved",
+      "img": "/assets/Images/Ved.jpg",
+      "desc": "Satya lives in a railway colony who dreams of playing for the railway cricket team and eventually representing Team India. Soon he falls madly in love with Nisha. However Satya's life takes a drastic change when a local Politician Bhaskar creates havoc in his personal and professional life.",
+      "gPrice": "200",
+      "sPrice": "150"
+    }
+  ],
+  "booking": [
+    {
+      "id": 1,
+      "mName": "Ved",
+      "date": "10/02/2023",
+      "time": "9:00am - 11:30am",
+      "seat": 2,
+      "gPrice": "200",
+      "sPrice": "150"
+    },
+    {
+      "mName": "Pathaan",
+      "gPrice": 200,
+      "sPrice": 150,
+      "id": 2
+    },
+    {
+      "mName": "Shehzada",
+      "gPrice": 250,
+      "sPrice": 180,
+      "id": 3
+    },
+    {
+      "mName": "Pathaan",
+      "gPrice": 200,
+      "sPrice": 150,
+      "id": 4
+    },
+    {
+      "mName": "Pathaan",
+      "gPrice": 200,
+      "sPrice": 150,
+      "id": 5
+    },
+    {
+      "mName": "Pathaan",
+      "gPrice": 200,
+      "sPrice": 150,
+      "id": 6
+    },
+    {
+      "mName": "Pathaan",
+      "gPrice": 200,
+      "sPrice": 150,
+      "id": 7
+    },
+    {
+      "date": "10/02/2023",
+      "time": "3:00pm - 5:30pm",
+      "seats": "4",
+      "id": 8
+    },
+    {
+      "date": "10/02/2023",
+      "time": "12:00pm - 2:30pm",
+      "seats": "4",
+      "id": 9
+    }
+  ]
+}

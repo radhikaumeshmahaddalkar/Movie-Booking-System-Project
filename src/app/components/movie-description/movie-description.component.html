@@ -1,0 +1,33 @@
+<h2 style="text-align: center; color:firebrick;">Streaming Now...</h2>
+<br><br>
+<!---------------------------------------------------------------------------------------------------------------------->
+
+<div class="row row-cols-1 row-cols-md-4 g-2">
+    <div class="container" style="margin: 40px;" *ngFor="let m of userData">
+        <div class="row">
+            <div class="col-sm">
+                <div class="card" style="width: 20rem;">
+                    <img class="card-img-top" height="277px" width="180px"  src="{{m.img}}" alt="Card image cap"> 
+                    <div class="card-body" style="height: 300px;">
+                        <h3 class="card-title">{{m.mName}}</h3>
+                        <p class="card-text"> {{m.desc}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <small>
+                            Gold Ticket Price: {{m.gPrice}}<br>
+                            Silver Ticket Price: {{m.sPrice}} <br> <br>
+                        </small>
+                        <div style="text-align: center;">
+                            <button class="btn btn-primary m-2" [routerLink]="['../booking', m._id]">Book Now <i
+                                    class="fa fa-ticket" aria-hidden="true"></i></button>
+                        </div>
+
+                    </div>
+                </div>
+
+                
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+<form #myForm="ngForm" (ngSubmit)="addData(myForm.value)">
+    <!------------------------------------------------------------------------------------------------------------------>
+    <a href="crud/movie-dashboard">View Movie Details</a>
+
+    <!-----------------------------------------------------Register----------------------------------------------------->
+    <br>
+    <h2 style="text-align: center; color: dimgray;">Add Movie</h2>
+    <br>
+    <!------------------------------------------------------First Row---------------------------------------------------->
+    <div class="row">
+        <div class="col-sm-6">
+            <label>Movie Name</label>
+
+            <input type="text" name="mName" #refMname="ngModel" class="form-control" placeholder="Enter your Movie Name"
+                pattern="([ .\w']+?)" ngModel required
+                [ngClass]="{ 'is-invalid' : myForm.submitted && refMname.errors}">
+
+            <div *ngIf="refMname.invalid && refMname.touched" class="text-danger">
+                <div *ngIf="refMname.errors?.['required']">
+                    Movie name is required
+                </div>
+                <div *ngIf="refMname.errors?.['pattern']">
+                    Movie Name is invalid. At least 3 letters (max 30)
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="col-sm-6">
+            <label>Description</label>
+
+            <input type="text" name="desc" #refdes="ngModel" class="form-control"
+                placeholder="Enter your Description" pattern="([ .\w']+?)" ngModel required
+                [ngClass]="{ 'is-invalid' : myForm.submitted && refdes.errors}">
+
+            <div *ngIf="refdes.invalid && refdes.touched" class="text-danger">
+                <div *ngIf="refdes.errors?.['required']">
+                    Description is required
+                </div>
+                <div *ngIf="refdes.errors?.['pattern']">
+                    Description is invalid. At least 3 letters (max 30)
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-----------------------------------------------------Second Row ------------------------------------------------------------->
+
+    <div class="row">
+        <div class="col-sm-6">
+            <label>Gold Ticket Price</label>
+
+            <input type="text" name="gPrice" #refGprice="ngModel" class="form-control"
+                placeholder="Enter your Gold Ticket Price" pattern="[0-9]{3,4}" ngModel
+                required [ngClass]="{ 'is-invalid' : myForm.submitted && refGprice.errors}">
+
+            <div *ngIf="refGprice.invalid && refGprice.touched" class="text-danger">
+                <div *ngIf="refGprice.errors?.['required']">
+                    Gold Ticket Price is required
+                </div>
+                <div *ngIf="refGprice.errors?.['pattern']">
+                    Gold Ticket Price is invalid (3-4 Digit)
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="col-sm-6">
+            <label>Silver Price</label>
+
+            <input type="text" name="sPrice" #refSprice="ngModel" class="form-control"
+                placeholder="Enter your Silver Ticket Price" pattern="[0-9]{3,4}" ngModel required
+                [ngClass]="{ 'is-invalid' : myForm.submitted && refSprice.errors}">
+
+            <div *ngIf="refSprice.invalid && refSprice.touched" class="text-danger">
+                <div *ngIf="refSprice.errors?.['required']">
+                    Silver Ticket Price is required
+                </div>
+                <div *ngIf="refSprice.errors?.['pattern']">
+                    Silver Ticket Price is invalid (3-4 Digit)
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-----------------------------------------------------Third Row--------------------------------------------------------------->
+    
+    <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Submit</button>
+    <br>
+</form>

@@ -1,0 +1,54 @@
+<form #myForm="ngForm" (ngSubmit)="putData(myForm.value)">
+
+    <!-----------------------------------------------------Register----------------------------------------------------->
+    <br>
+    <h2 style="text-align: center; color: dimgray;">Add Movie</h2>
+    <br>
+    <!------------------------------------------------------First Row---------------------------------------------------->
+    <div class="row">
+        <div class="col-sm-6">
+            <label>Movie Name</label>
+
+            <input type="text" name="mName" class="form-control" placeholder="Enter your Movie Name"
+                 [ngModel]="movieObj?.mName" required>
+
+        </div>
+
+
+        <div class="col-sm-6">
+            <label>Description</label>
+
+            <input type="text" name="desc" class="form-control"
+                placeholder="Enter your Description"  [ngModel]="movieObj?.desc" required>
+
+            
+        </div>
+    </div>
+    <br>
+    <!-----------------------------------------------------Second Row ------------------------------------------------------------->
+
+    <div class="row">
+        <div class="col-sm-6">
+            <label>Gold Ticket Price</label>
+
+            <input type="text" name="gPrice" class="form-control"
+                placeholder="Enter your Gold Ticket Price"  [ngModel]="movieObj?.gPrice" required>
+          
+        </div>
+
+
+        <div class="col-sm-6">
+            <label>Silver Price</label>
+
+            <input type="text" name="sPrice" class="form-control"
+                placeholder="Enter your Silver Ticket Price" [ngModel]="movieObj?.sPrice" required>
+
+            
+        </div>
+    </div>
+    <br>
+    <!-----------------------------------------------------Third Row--------------------------------------------------------------->
+    
+    <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Save</button>
+    <br>
+</form>

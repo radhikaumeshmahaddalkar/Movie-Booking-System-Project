@@ -1,0 +1,47 @@
+<!-------------------------------------------------------------------------------------------------------------------->
+<h2 style="text-align: center;"><u> Registration Details </u></h2>
+<br>
+
+<div class="col-sm-3">
+    <div class="input-group">
+        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+            aria-describedby="search-addon" name="search" [(ngModel)]="term" />
+
+    </div>
+</div>
+<br>
+<!-------------------------------------------------------------------------------------------------------------------->
+
+<table class="table table-light">
+    <thead>
+        <tr>
+            <th (click)="changeOrder()">ID</th>
+            <th (click)="changeOrder()">First Name</th>
+            <th (click)="changeOrder()">Last Name</th>
+            <th (click)="changeOrder()">Email-id</th>
+            <th (click)="changeOrder()">Mobile Number</th>
+            <th (click)="changeOrder()">Password</th>
+            <th (click)="changeOrder()">Address</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let u of userData | filter:term | orderBy: order: reverse">
+            <td> {{ u._id }} </td>
+            <td> {{ u.fname }} </td>
+            <td> {{ u.lname }} </td>
+            <td> {{ u.email }} </td>
+            <td> {{ u.mobNo }} </td>
+            <td> {{ u.pass }} </td>
+            <td> {{ u.addr }} </td>
+            <td>
+                <button class="btn btn-outline-success m-2" [routerLink]="['register-edit', u._id]"><i
+                        class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+
+                <button class="btn btn-outline-danger" (click)="delete(u._id)"><i class="fa fa-trash-o"
+                        aria-hidden="true"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

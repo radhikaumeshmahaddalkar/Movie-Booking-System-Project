@@ -1,0 +1,94 @@
+<form #myForm="ngForm" (ngSubmit)="addData(myForm.value)">
+
+    <!-----------------------------------------------------Register----------------------------------------------------->
+    <br>
+    <h2 style="text-align: center; color: dimgray;">Booking</h2>
+    <br>
+    <!------------------------------------------------------First Row---------------------------------------------------->
+    <div class="row">
+        <div class="col-sm-6">
+            <label>Movie Name</label>
+
+            <input type="text" name="mName" class="form-control" placeholder="Enter your Movie Name"
+                [ngModel]="movieObj?.mName" required disabled>
+
+        </div>
+        <div class="col-sm-6">
+            <div>
+                <label>Select Date:</label>
+                <select class="form-control" name="date" [ngModel]="movieObj?.date">
+                    <option value="0">--Select your Date--</option>
+                    <option *ngFor="let d of date" value={{d}}>
+                        {{d}}
+                    </option>
+                </select>
+            </div>
+
+        </div>
+
+
+    </div>
+    <br>
+    <!-----------------------------------------------------Seacond row----------------------------------------------------->
+    <div class="row">
+        <div class="col-sm-6">
+            <div>
+                <label>Select Time:</label>
+                <select class="form-control" name="time" [ngModel]="movieObj?.time">
+                    <option value="0">--Select your Time--</option>
+                    <option *ngFor="let t of time" value={{t}}>
+                        {{t}}
+                    </option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="col-sm-6">
+            <label>How Many Seats?</label>
+
+            <select class="form-control" name="seats" [ngModel]="movieObj?.seats">
+                <option value="0">--Select your Time--</option>
+                <option *ngFor="let s of seat" value={{s}}>
+                    {{s}}
+                </option>
+            </select>
+        </div>
+    </div>
+<br>
+    <!-----------------------------------------------------Third Row ------------------------------------------------------------->
+
+    <div class="row">
+        <div class="col-sm-6">
+            <label>Gold Ticket Price</label>
+
+            <input type="text" name="gPrice" class="form-control" placeholder="Enter your Gold Ticket Price"
+                [ngModel]="movieObj?.gPrice" required disabled>
+
+        </div>
+
+
+        <div class="col-sm-6">
+            <label>Silver Price</label>
+
+            <input type="text" name="sPrice" class="form-control" placeholder="Enter your Silver Ticket Price"
+                [ngModel]="movieObj?.sPrice" required disabled>
+
+
+        </div>
+    </div>
+    <br>
+    <!-----------------------------------------------------Fourth row----------------------------------------------------->
+
+  <!--  <label for="">Total Price:</label>
+    <input type="text" class="form-control" disabled>-->
+
+    <!--<div>
+        <router-outlet></router-outlet>
+    </div>-->
+
+    <!-----------------------------------------------------Fourth Row----------------------------------------------------->
+    
+    <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid" disabled>Submit</button>
+    <br>
+</form>

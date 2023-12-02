@@ -1,0 +1,78 @@
+<form #myForm="ngForm" (ngSubmit)="putData(myForm.value)">
+
+    <!-----------------------------------------------------Register----------------------------------------------------->
+    <br>
+    <h2 style="text-align: center; color: dimgray;">Register Yourself</h2>
+    <br>
+    <!------------------------------------------------------First Row---------------------------------------------------->
+    <div class="row">
+        <div class="col-sm-6">
+            <label>First Name</label>
+
+            <input type="text" name="fname" class="form-control" placeholder="Enter your first name"
+                [ngModel]="userObj?.fname" required>
+
+        </div>
+
+
+        <div class="col-sm-6">
+            <label>Last Name</label>
+
+            <input type="text" name="lname" class="form-control" placeholder="Enter your last name"
+                [ngModel]="userObj?.lname" required>
+
+        </div>
+    </div>
+    <br>
+    <!-----------------------------------------------------Second Row ------------------------------------------------------------->
+
+    <div class="row">
+        <div class="col-sm-6">
+            <label>Email-id</label>
+
+            <input type="text" name="email" class="form-control" placeholder="Enter your Email-id"
+                [ngModel]="userObj?.email" required>
+
+
+        </div>
+
+
+        <div class="col-sm-6">
+            <label>Mobile Number</label>
+
+            <input type="text" name="mobNo" class="form-control" placeholder="Enter your Mobile Number"
+                [ngModel]="userObj?.mobNo" required>
+
+        </div>
+    </div>
+    <br>
+    <!-----------------------------------------------------Third Row--------------------------------------------------------------->
+
+    <div class="row">
+        <div class="col-sm-6">
+            <label>Create Password</label>
+
+            <input type="text" name="pass" #refpass="ngModel" class="form-control" placeholder="Enter your Password"
+                [ngModel]="userObj?.pass" required>
+
+        </div>
+
+
+        <div class="col-sm-6">
+            <label>Address</label>
+
+            <input type="text" name="addr" class="form-control" placeholder="Enter your Address"
+                [ngModel]="userObj?.addr" required>
+
+
+        </div>
+    </div>
+    <br>
+    <!----------------------------------------------------- Fourth Row------------------------------------------------------------->
+
+    <br>
+    <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Save</button>
+
+    <!-- [disabled]="myForm.invalid" -->
+    <br>
+</form>

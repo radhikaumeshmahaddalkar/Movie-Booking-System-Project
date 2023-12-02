@@ -1,0 +1,63 @@
+<form #myForm="ngForm">
+
+    <!-----------------------------------------------------login----------------------------------------------------->
+    <br>
+    <h2 style="text-align: center; color: dimgray;">Login Now</h2>
+    <br>
+    <!------------------------------------------------------First Row---------------------------------------------------->
+    
+    <div class="row" style="margin-left: 420px;">
+        <div class="col-sm-6">
+            <label>Email-id</label>
+
+            <input type="text" name="email" #refemail="ngModel" class="form-control" placeholder="Enter your Email-id"
+                pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="uemail" required
+                [ngClass]="{ 'is-invalid' : myForm.submitted && refemail.errors}">
+
+            <div *ngIf="refemail.invalid && refemail.touched" class="text-danger">
+                <div *ngIf="refemail.errors?.['required']">
+                    Email-id is required
+                </div>
+                <div *ngIf="refemail.errors?.['pattern']">
+                    Email-id is invalid
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <!----------------------------------------------------Second Row----------------------------------------------------->
+
+    <div class="row" style="margin-left: 420px;">
+        <div class="col-sm-6">
+            <label> Password</label>
+
+            <input type="password" name="pass" #refpass="ngModel" class="form-control" placeholder="Enter your Password"
+                pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$" [(ngModel)]="upass" required
+                [ngClass]="{ 'is-invalid' : myForm.submitted && refpass.errors}">
+
+            <div *ngIf="refpass.invalid && refpass.touched" class="text-danger">
+                <div *ngIf="refpass.errors?.['required']">
+                    Password is required
+                </div>
+                <div *ngIf="refpass.errors?.['pattern']">
+                    Password should be 8 charactes. One UpperCase,One LowerCase, Number and special character.
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!--------------------------------------------------Third Row-------------------------------------------------------->
+
+    <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid" style="margin-left: 600px;" (click)="getData()">Submit</button>
+
+    <!-----------------------------------------------Hyperlink----------------------------------------------------------->
+
+    <div>
+        <a class="nav-link" style="color: red; text-align: center;" href="registration">If you are not Register, then
+            Register Now....</a>
+    </div>
+
+
+</form>

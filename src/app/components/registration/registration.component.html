@@ -1,0 +1,147 @@
+<form #myForm="ngForm" (ngSubmit)="addData(myForm.value)">
+
+    <!-----------------------------------------------------Register----------------------------------------------------->
+    <br>
+    <h2 style="text-align: center; color: dimgray;">Register Yourself</h2>
+    <br>
+    <!------------------------------------------------------First Row---------------------------------------------------->
+    <div class="row">
+        <div class="col-sm-6">
+            <label>First Name</label>
+
+            <input type="text" name="fname" #refName="ngModel" class="form-control" placeholder="Enter your first name"
+                pattern="[a-zA-Z]{3,30}" ngModel required
+                [ngClass]="{ 'is-invalid' : myForm.submitted && refName.errors}">
+
+            <div *ngIf="refName.invalid && refName.touched" class="text-danger">
+                <div *ngIf="refName.errors?.['required']">
+                    First name is required
+                </div>
+                <div *ngIf="refName.errors?.['pattern']">
+                    First Name is invalid. At least 3 letters (max 30)
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <label>Last Name</label>
+
+            <input type="text" name="lname" #reflName="ngModel" class="form-control" placeholder="Enter your last name"
+                pattern="[a-zA-Z]{3,30}" ngModel required
+                [ngClass]="{ 'is-invalid' : myForm.submitted && reflName.errors}">
+
+            <div *ngIf="reflName.invalid && reflName.touched" class="text-danger">
+                <div *ngIf="reflName.errors?.['required']">
+                    Last name is required
+                </div>
+                <div *ngIf="reflName.errors?.['pattern']">
+                    Last Name is invalid. At least 3 letters (max 30)
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-----------------------------------------------------Second Row ------------------------------------------------------------->
+
+    <div class="row">
+        <div class="col-sm-6">
+            <label>Email-id</label>
+
+            <input type="text" name="email" #refemail="ngModel" class="form-control" placeholder="Enter your Email-id"
+                pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel required
+                [ngClass]="{ 'is-invalid' : myForm.submitted && refemail.errors}">
+
+            <div *ngIf="refemail.invalid && refemail.touched" class="text-danger">
+                <div *ngIf="refemail.errors?.['required']">
+                    Email-id is required
+                </div>
+                <div *ngIf="refemail.errors?.['pattern']">
+                    Email-id is invalid
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="col-sm-6">
+            <label>Mobile Number</label>
+
+            <input type="text" name="mobNo" #refmob="ngModel" class="form-control"
+                placeholder="Enter your Mobile Number" pattern="^[0-9]{10}" ngModel required
+                [ngClass]="{ 'is-invalid' : myForm.submitted && refmob.errors}">
+
+            <div *ngIf="refmob.invalid && refmob.touched" class="text-danger">
+                <div *ngIf="refmob.errors?.['required']">
+                    Mobile Number is required
+                </div>
+                <div *ngIf="refmob.errors?.['pattern']">
+                    Mobile Number is invalid.
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-----------------------------------------------------Third Row--------------------------------------------------------------->
+
+    <div class="row">
+        <div class="col-sm-6">
+            <label>Create Password</label>
+
+            <input type="password" name="pass" #refpass="ngModel" class="form-control" placeholder="Enter your Password"
+                pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$" ngModel required
+                [ngClass]="{ 'is-invalid' : myForm.submitted && refpass.errors}">
+
+            <div *ngIf="refpass.invalid && refpass.touched" class="text-danger">
+                <div *ngIf="refpass.errors?.['required']">
+                    Password is required
+                </div>
+                <div *ngIf="refpass.errors?.['pattern']">
+                    Password should be 8 charactes. One UpperCase,One LowerCase, Number and special character.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6">
+            <label>Address</label>
+
+            <input type="text" name="addr" #refaddr="ngModel" class="form-control" placeholder="Enter your Address"
+                pattern="^[a-zA-Z]{4,50}" ngModel required
+                [ngClass]="{ 'is-invalid' : myForm.submitted && refaddr.errors}">
+
+            <div *ngIf="refaddr.invalid && refaddr.touched" class="text-danger">
+                <div *ngIf="refaddr.errors?.['required']">
+                    Address is required
+                </div>
+                <div *ngIf="refaddr.errors?.['pattern']">
+                    Address is invalid.
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br>
+   <!----------------------------------------------------- Fourth Row------------------------------------------------------------->
+
+
+    <div class="col-sm-7 mt-2">
+        <label for="">
+            <input type="checkbox" name="term" #refTerm="ngModel" ngModel required>
+            I accept the terms and conditions
+        </label>
+        <div *ngIf="myForm.submitted && refTerm.touched" class="text-danger">
+
+            <div *ngIf="refTerm.errors?.['required']">
+                Please accept the terms and conditions
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid" >Submit</button>
+
+    <!-- [disabled]="myForm.invalid" -->
+    <br>
+</form>
